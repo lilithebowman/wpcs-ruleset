@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="Corus-Standard">
+	<description>Custom WordPress Coding Standards</description>
+
+	<config name="installed_paths" value="vendor/wp-coding-standards/wpcs/" />
+
+	<!-- Remove yoda condition from WordPress-Core ruleset -->
+	<rule ref="vendor/wp-coding-standards/wpcs/WordPress-Core/ruleset.xml">
+		<exclude name="WordPress.PHP.YodaConditions" />
+	</rule>
+
+	<!-- Excluding vendor directories -->
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<!-- Excluding WordPress admin directories -->
+	<exclude-pattern>wp-admin/*</exclude-pattern>
+	<exclude-pattern>wp-includes/*</exclude-pattern>
+
+	<!-- Tell code sniffer which rules to follow -->
+	<rule ref="WordPress-Extra"/>
+
+</ruleset>
